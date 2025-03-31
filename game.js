@@ -1,7 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
 
-function getComputerChioce() {
+function getComputerChoice() {
   switch (Math.floor(Math.random() * 3)) {
     case 0:
       return 'rock';
@@ -20,7 +20,7 @@ function getComputerChioce() {
   } 
 }
 
-console.log(getComputerChioce());
+console.log(getComputerChoice());
 
 function getHumanChoice() {
   //ask user for valid input 1 2 or 3, rock/paper/scissors
@@ -39,3 +39,34 @@ function getHumanChoice() {
   }
 }
 
+function playRound(humanChoice, computerChoice) {
+  //human wins
+  if(humanChoice === 'rock' && computerChoice === 'scissors') {
+    console.log('Player Wins!');
+    humanScore++;
+  }  
+  else if(humanChoice === 'paper' && computerChoice === 'rock') {
+    console.log('Player Wins!');
+    humanScore++;
+  }
+  else if(humanChoice === 'scissors' && computerChoice === 'paper') {
+    console.log('Player Wins!');
+    humanScore++;
+  }
+
+  else if(humanChoice === computerChoice) {
+    console.log("It's a tie!");
+  }
+
+  else {
+    console.log(`Computer Wins! ${computerChoice} beats ${humanChoice}`);
+    computerScore++;
+  }
+  console.log(humanScore);
+  console.log(computerScore);
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
