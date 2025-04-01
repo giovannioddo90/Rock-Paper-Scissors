@@ -20,8 +20,6 @@ function getComputerChoice() {
   } 
 }
 
-console.log(getComputerChoice());
-
 function getHumanChoice() {
   //ask user for valid input 1 2 or 3, rock/paper/scissors
   const choice = Number(window.prompt('1 - rock, 2 - paper, 3 - scissors', ''));
@@ -62,11 +60,32 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Computer Wins! ${computerChoice} beats ${humanChoice}`);
     computerScore++;
   }
-  console.log(humanScore);
-  console.log(computerScore);
+
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+let round = 0;
 
-playRound(humanSelection, computerSelection);
+while(round < 5) {
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+
+  playRound(humanSelection, computerSelection);
+  round++;
+
+  alert(`Player Score: ${humanScore}, Computer Score ${computerScore}`);
+
+  }
+
+  if(humanScore > computerScore) {
+    return alert("Player wins the game!");
+  }
+  else if (humanScore === computerScore) {
+    return alert("The game is a tie!");
+  }
+  else {
+    return alert("The computer wins!");
+  }
+}
+
+playGame();
