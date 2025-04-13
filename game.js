@@ -1,10 +1,10 @@
-let humanScore = 0;
+let humanScore = 0; 
 let computerScore = 0;
 
-function getComputerChoice() {
-  switch (Math.floor(Math.random() * 3)) {
+function getComputerChoice() { 
+  switch (Math.floor(Math.random() * 3)) { 
     case 0:
-      return 'rock';
+      return 'rock'; 
       break;
 
     case 1:
@@ -23,8 +23,7 @@ function getComputerChoice() {
 // function getHumanChoice() {
 //   //ask user for valid input 1 2 or 3, rock/paper/scissors
 //   const choice = Number(window.prompt('1 - rock, 2 - paper, 3 - scissors', ''));
-//   //switch/case for input
-//   switch(choice) {
+//   //switch/case for input switch(choice) {
 //     case 1: 
 //       return 'rock';
 //       break;
@@ -40,22 +39,21 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice) {
   //human wins
   if(humanChoice === 'rock' && computerChoice === 'scissors') {
-    alert('Player Wins!');
+    alert('Player Scores!');
     humanScore++;
     scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
 
   }  
   else if(humanChoice === 'paper' && computerChoice === 'rock') {
-    alert('Player Wins!');
+    alert('Player Scores!');
     humanScore++;
     scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
 
   }
   else if(humanChoice === 'scissors' && computerChoice === 'paper') {
-    alert('Player Wins!');
+    alert('Player Scores!');
     humanScore++;
     scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
-
   }
 
   else if(humanChoice === computerChoice) {
@@ -63,13 +61,26 @@ function playRound(humanChoice, computerChoice) {
   }
 
   else {
-    alert(`Computer Wins! ${computerChoice} beats ${humanChoice}`);
+    alert(`Computer Scores! ${computerChoice} beats ${humanChoice}`);
     computerScore++;
     
     //update score
-    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
+    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`; 
+  }
+  if (humanScore === 5) {
+    alert('PLAYER WINS!');
+    humanScore = 0;
+    computerScore = 0;
   }
 
+  else if (computerScore === 5) {
+    alert('YOU LOSE! TRY AGAIN');
+    humanScore = 0;
+    computerScore = 0;
+  }
+
+  // Update displayed score after reset
+  scoreDiv.innerHTML = `Player Score: ${humanScore}<br>Computer Score: ${computerScore}`; 
 }
 
 // function playGame() {
