@@ -86,15 +86,33 @@ alert(`Player Score: ${humanScore}, Computer Score ${computerScore}`);
 
 
 const rockBtn = document.createElement('button');
+rockBtn.id = 'rock-button'
 rockBtn.textContent = 'Rock';
 document.body.appendChild(rockBtn);
 
+document.getElementById('rock-button').addEventListener('click', () => {
+  playRound('rock', getComputerChoice());
+});
+
 const paperBtn = document.createElement('button');
+paperBtn.id = 'paper-button';
 paperBtn.textContent = 'Paper';
 document.body.appendChild(paperBtn);
 
+document.getElementById('paper-button').addEventListener('click', () => {
+  playRound('paper', getComputerChoice());
+});
+
 const scissorsBtn = document.createElement('button');
+scissorsBtn.id = 'scissors-button';
 scissorsBtn.textContent = 'Scissors';
+
 document.body.appendChild(scissorsBtn);
 
-playGame();
+document.getElementById('scissors-button').addEventListener('click', () => {
+  playRound('scissors', getComputerChoice());
+});
+
+
+
+//playGame();
