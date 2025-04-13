@@ -40,25 +40,34 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice) {
   //human wins
   if(humanChoice === 'rock' && computerChoice === 'scissors') {
-    console.log('Player Wins!');
+    alert('Player Wins!');
     humanScore++;
+    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
+
   }  
   else if(humanChoice === 'paper' && computerChoice === 'rock') {
-    console.log('Player Wins!');
+    alert('Player Wins!');
     humanScore++;
+    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
+
   }
   else if(humanChoice === 'scissors' && computerChoice === 'paper') {
-    console.log('Player Wins!');
+    alert('Player Wins!');
     humanScore++;
+    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
+
   }
 
   else if(humanChoice === computerChoice) {
-    console.log("It's a tie!");
+    alert("It's a tie!");
   }
 
   else {
-    console.log(`Computer Wins! ${computerChoice} beats ${humanChoice}`);
+    alert(`Computer Wins! ${computerChoice} beats ${humanChoice}`);
     computerScore++;
+    
+    //update score
+    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
   }
 
 }
@@ -113,6 +122,12 @@ document.getElementById('scissors-button').addEventListener('click', () => {
   playRound('scissors', getComputerChoice());
 });
 
-// TODO: Add a div for displaying results and change all of your console.logs into DOM methods.
+// DONE: Add a div for displaying results and change all of your console.logs into DOM methods.
+const scoreDiv = document.createElement('div');
+scoreDiv.id = 'score-div';
+document.body.appendChild(scoreDiv)
+scoreDiv.style = 'border: 1px solid black;'
+
+scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
 
 //playGame();
