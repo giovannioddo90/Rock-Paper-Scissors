@@ -20,40 +20,19 @@ function getComputerChoice() {
   } 
 }
 
-// function getHumanChoice() {
-//   //ask user for valid input 1 2 or 3, rock/paper/scissors
-//   const choice = Number(window.prompt('1 - rock, 2 - paper, 3 - scissors', ''));
-//   //switch/case for input switch(choice) {
-//     case 1: 
-//       return 'rock';
-//       break;
-//     case 2: 
-//       return 'paper';
-//       break;
-//     case 3:
-//       return 'scissors'
-//       break;
-//   }
-// }
-
 function playRound(humanChoice, computerChoice) {
   //human wins
   if(humanChoice === 'rock' && computerChoice === 'scissors') {
     alert('Player Scores!');
     humanScore++;
-    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
-
   }  
   else if(humanChoice === 'paper' && computerChoice === 'rock') {
     alert('Player Scores!');
     humanScore++;
-    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
-
   }
   else if(humanChoice === 'scissors' && computerChoice === 'paper') {
     alert('Player Scores!');
     humanScore++;
-    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
   }
 
   else if(humanChoice === computerChoice) {
@@ -63,10 +42,8 @@ function playRound(humanChoice, computerChoice) {
   else {
     alert(`Computer Scores! ${computerChoice} beats ${humanChoice}`);
     computerScore++;
-    
-    //update score
-    scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`; 
   }
+
   if (humanScore === 5) {
     alert('PLAYER WINS!');
     humanScore = 0;
@@ -79,31 +56,9 @@ function playRound(humanChoice, computerChoice) {
     computerScore = 0;
   }
 
-  // Update displayed score after reset
+  // Display scores
   scoreDiv.innerHTML = `Player Score: ${humanScore}<br>Computer Score: ${computerScore}`; 
 }
-
-// function playGame() {
-
-// const humanSelection = getHumanChoice();
-// const computerSelection = getComputerChoice();
-
-// playRound(humanSelection, computerSelection);
-
-// alert(`Player Score: ${humanScore}, Computer Score ${computerScore}`);
-
-// }
-
-// if(humanScore > computerScore) {
-//   return alert("Player wins the game!");
-// }
-// else if (humanScore === computerScore) {
-//   return alert("The game is a tie!");
-// }
-// else {
-//   return alert("The computer wins!");
-// }
-
 
 const rockBtn = document.createElement('button');
 rockBtn.id = 'rock-button'
@@ -139,6 +94,4 @@ scoreDiv.id = 'score-div';
 document.body.appendChild(scoreDiv)
 scoreDiv.style = 'border: 1px solid black;'
 
-scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score ${computerScore}`;
-
-//playGame();
+scoreDiv.innerText = `Player Score: ${humanScore} \n Computer Score: ${computerScore}`;
