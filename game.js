@@ -64,28 +64,37 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-let round = 0;
 
-while(round < 5) {
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-  playRound(humanSelection, computerSelection);
-  round++;
+playRound(humanSelection, computerSelection);
 
-  alert(`Player Score: ${humanScore}, Computer Score ${computerScore}`);
+alert(`Player Score: ${humanScore}, Computer Score ${computerScore}`);
 
-  }
-
-  if(humanScore > computerScore) {
-    return alert("Player wins the game!");
-  }
-  else if (humanScore === computerScore) {
-    return alert("The game is a tie!");
-  }
-  else {
-    return alert("The computer wins!");
-  }
 }
+
+// if(humanScore > computerScore) {
+//   return alert("Player wins the game!");
+// }
+// else if (humanScore === computerScore) {
+//   return alert("The game is a tie!");
+// }
+// else {
+//   return alert("The computer wins!");
+// }
+
+
+const rockBtn = document.createElement('button');
+rockBtn.textContent = 'Rock';
+document.body.appendChild(rockBtn);
+
+const paperBtn = document.createElement('button');
+paperBtn.textContent = 'Paper';
+document.body.appendChild(paperBtn);
+
+const scissorsBtn = document.createElement('button');
+scissorsBtn.textContent = 'Scissors';
+document.body.appendChild(scissorsBtn);
 
 playGame();
