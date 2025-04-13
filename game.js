@@ -20,22 +20,22 @@ function getComputerChoice() {
   } 
 }
 
-function getHumanChoice() {
-  //ask user for valid input 1 2 or 3, rock/paper/scissors
-  const choice = Number(window.prompt('1 - rock, 2 - paper, 3 - scissors', ''));
-  //switch/case for input
-  switch(choice) {
-    case 1: 
-      return 'rock';
-      break;
-    case 2: 
-      return 'paper';
-      break;
-    case 3:
-      return 'scissors'
-      break;
-  }
-}
+// function getHumanChoice() {
+//   //ask user for valid input 1 2 or 3, rock/paper/scissors
+//   const choice = Number(window.prompt('1 - rock, 2 - paper, 3 - scissors', ''));
+//   //switch/case for input
+//   switch(choice) {
+//     case 1: 
+//       return 'rock';
+//       break;
+//     case 2: 
+//       return 'paper';
+//       break;
+//     case 3:
+//       return 'scissors'
+//       break;
+//   }
+// }
 
 function playRound(humanChoice, computerChoice) {
   //human wins
@@ -63,16 +63,16 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-function playGame() {
+// function playGame() {
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+// playRound(humanSelection, computerSelection);
 
-alert(`Player Score: ${humanScore}, Computer Score ${computerScore}`);
+// alert(`Player Score: ${humanScore}, Computer Score ${computerScore}`);
 
-}
+// }
 
 // if(humanScore > computerScore) {
 //   return alert("Player wins the game!");
@@ -113,6 +113,6 @@ document.getElementById('scissors-button').addEventListener('click', () => {
   playRound('scissors', getComputerChoice());
 });
 
-
+// TODO: Add a div for displaying results and change all of your console.logs into DOM methods.
 
 //playGame();
